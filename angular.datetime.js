@@ -6,7 +6,9 @@ angular.module("directives",[]).directive("datetimepicker",function(){
 
             var unregister = scope.$watch(function(){
 
-                $(element).append("<input id='date-"+attrs.dateid+"' style='border:none;width:100%' value='"+ctrl.$modelValue+"'>");
+                $(element).append("<input id='date-"+attrs.dateid+"' style='border:none;width:100%;height:100%' " +
+                "value='"+ctrl.$modelValue+"'>");
+                $(element).css("padding","0");
 
                 element.on('change', function() {
                     scope.$apply(function() {
