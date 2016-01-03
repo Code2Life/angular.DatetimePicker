@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="test" ng-cloak>
+<head>
+    <meta charset="utf-8">
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link href="jquery.datetimepicker.css" rel="stylesheet">
+    <script src="jquery.datetimepicker.js"></script>
+
+    <script src="angular.js"></script>
+    <script src="angular.datetime.js"></script>
+    <script src="test.js"></script>
+
+    <title>Test</title>
+</head>
+<body ng-controller="testCtrl">
+
+<div class="col-md-8 col-md-offset-2" style="margin-top:30px">
+    <div class="col-md-6">
+        <h2>Just jQuery</h2>
+        <input id="jqueryPicker" class="form-control" ng-model="time1"/>
+        <pre style="margin-top:20px">&lt;input id="jqueryPicker" ng-model="time1"/&gt;
+
+$("#jqueryPicker").datetimepicker();
+        </pre>
+    </div>
+
+    <div class="col-md-6">
+        <h3 style="margin:80px 0 0 50px;">ngBind : {{time1}}</h3>
+    </div>
+</div>
+
+<div class="col-md-8 col-md-offset-2" style="margin-top:20px">
+    <div class="col-md-6">
+        <h2>Angular Directive Adapter</h2>
+        <datetimepicker dateID="timepicker" ng-model="time2" format="Y/m/d h:i" class="form-control"></datetimepicker>
+
+        <pre style="margin-top:20px">&lt;datetimepicker dateID="timepicker"
+ng-model="time2" format="Y/m/d h:i"&gt;&lt;/datetimepicker&gt;
+        </pre>
+    </div>
+
+    <div class="col-md-6">
+        <h3 style="margin:80px 0 0 50px;">ngBind : {{time2}}</h3>
+    </div>
+</div>
+
+<script>
+    $("#jqueryPicker").datetimepicker();
+</script>
+
+</body>
+</html>
