@@ -16,7 +16,7 @@ angular.module("directives",[]).directive("datetimepicker",function(){
 
                 element.on('click',function(){
                     $("#date-"+attrs.dateid).datetimepicker({
-                        format : attrs.format,
+                        format : attrs.format || 'Y/m/d h:i',
                         onClose : function(){
                             element.change();
                         }
